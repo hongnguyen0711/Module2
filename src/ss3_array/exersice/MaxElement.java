@@ -1,4 +1,5 @@
 package ss3_array.exersice;
 
-public class Test {
+public class MaxElement {
+
 }
