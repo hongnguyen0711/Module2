@@ -28,7 +28,7 @@ public class StopWatch {
         System.out.println(this.endTime);
     }
 
-    public void getElapsedTime() {
+    public void elapsedTime() {
         System.out.println(this.endTime - this.startTime);
     }
 

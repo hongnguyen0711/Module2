@@ -1,6 +1,6 @@
 package ss4_oop.exersice.class_fan;
 
-public class ClassFan {
+public class Fan {
     final int SLOW = 1;
     final int MEDIUM = 2;
     final int FAST = 3;
@@ -9,10 +9,10 @@ public class ClassFan {
     private double radius = 5;
     private String color = "blu";
 
-    public ClassFan() {
+    public Fan() {
     }
 
-    public ClassFan(int speed, boolean on, double radius, String color) {
+    public Fan(int speed, boolean on, double radius, String color) {
         this.speed = speed;
         this.on = on;
         this.radius = radius;

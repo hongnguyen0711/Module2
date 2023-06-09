@@ -22,7 +22,7 @@ public class MainStopWatch {
                     watch.stop();
                     break;
                 case 4:
-                    watch.getElapsedTime();
+                    watch.elapsedTime();
                     break;
                 case 5:
                     System.exit(0);
