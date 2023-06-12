@@ -9,7 +9,7 @@ public class Main {
 
         Test Text2 = new Test("Mazda 6","Skyactiv 6");
 
-       Text1.display();
+        System.out.println(Text1.toString("123"));
 
     }
 

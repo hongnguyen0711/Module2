@@ -19,15 +19,15 @@ public class Test {
         numberOfCars++;
     }
 
-    @Override
-    public String toString() {
+    public String toString(String age) {
         return "Text{" +
                 "name='" + name + '\'' +
-                ", engine='" + engine + '\'' + numberOfCars +
+                ", engine='" + engine + '\'' + numberOfCars + age +
                 '}';
     }
 
     public void display(){
         System.out.println("name: " + this.name + "engine: " + this.engine + numberOfCars);
     }
+
 }
