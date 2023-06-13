@@ -10,6 +10,11 @@ public class Circle extends Shape implements Resizeable {
         this.darius = darius;
     }
 
+    public Circle(String color, double darius) {
+        super(color);
+        this.darius = darius;
+    }
+
     public double getDarius() {
         return darius;
     }
@@ -22,9 +27,10 @@ public class Circle extends Shape implements Resizeable {
     public void resize(double percent) {
         this.darius += this.darius * percent / 100;
     }
+
     @Override
-    public double getArea(){
-        return Math.PI*this.darius*this.darius;
+    public double getArea() {
+        return Math.PI * this.darius * this.darius;
     }
 
     @Override
