@@ -1,6 +1,6 @@
 package ss7_abstrac_interface.exercise.Resizeable;
 
-public abstract class Shape implements Resizeable {
+public abstract class Shape {
     public String color = "blue";
 
     public Shape() {
@@ -10,10 +10,6 @@ public abstract class Shape implements Resizeable {
         this.color = color;
     }
 
-
-    @Override
-    public void resize(double percent) {
-    }
 
     public abstract double getArea();
 

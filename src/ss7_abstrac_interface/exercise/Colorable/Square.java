@@ -1,6 +1,6 @@
 package ss7_abstrac_interface.exercise.Colorable;
 
-public class Square extends Shape {
+public class Square extends Shape implements Colorable {
     private double edge;
 
     public Square() {
@@ -18,9 +18,10 @@ public class Square extends Shape {
     public void setEdge(double edge) {
         this.edge = edge;
     }
+
     @Override
     public double getArea() {
-        return this.edge*this.edge;
+        return this.edge * this.edge;
     }
 
     @Override
@@ -30,5 +31,10 @@ public class Square extends Shape {
                 ", color='" + color + '\'' +
                 ", fill=" + fill +
                 '}';
+    }
+
+    @Override
+    public String howToColor() {
+        return "Color all four sides!";
     }
 }

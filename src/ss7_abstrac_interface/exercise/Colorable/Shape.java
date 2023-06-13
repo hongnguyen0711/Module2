@@ -27,5 +27,6 @@ public abstract class Shape {
     public void setFill(boolean fill) {
         this.fill = fill;
     }
+
     public abstract double getArea();
 }
