@@ -1,4 +1,4 @@
-package ss6_inheritance.exersice.point2D_point3D;
+package ss6_inheritance.exersice.point2d_point3d;
 
 import java.util.Arrays;
 
