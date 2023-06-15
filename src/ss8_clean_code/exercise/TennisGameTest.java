@@ -78,5 +78,6 @@ public class TennisGameTest {
             if (i < this.player2Score)
                 m_score2 += 1;
         }
-        assertEquals(this.expectedScore, TennisGame.getScore("John", "Bill", m_score1, m_score2));
-    }}
+        assertEquals(this.expectedScore, TennisGame.showAvantagePoint("John", "Bill", m_score1, m_score2));
+    }
+}

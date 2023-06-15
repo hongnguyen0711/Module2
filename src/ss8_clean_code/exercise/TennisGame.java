@@ -7,62 +7,83 @@ public class TennisGame {
     public static final char THREE_POINT = 3;
     public static final char MIN_OF_SCORE = 4;
 
-    public static String getScore(String player1Name, String player2Name, int playScore1, int playScore2) {
-        String score = "";
-        int tempScore = 0;
-        if (playScore1 == playScore2) {
-            switch (playScore1) {
-                case ZERO_POINT:
-                    score = "Love-All";
-                    break;
-                case ONE_POINT:
-                    score = "Fifteen-All";
-                    break;
-                case TWO_POINT:
-                    score = "Thirty-All";
-                    break;
-                case THREE_POINT:
-                    score = "Forty-All";
-                    break;
-                default:
-                    score = "Deuce";
-                    break;
 
-            }
-        } else if (playScore1 >= MIN_OF_SCORE || playScore2 >= MIN_OF_SCORE) {
-            int minusResult = playScore1 - playScore2;
-            if (minusResult == 1) {
-                score = "Advantage player1";
-            } else if (minusResult == -1) {
-                score = "Advantage player2";
-            } else if (minusResult >= 2) {
-                score = "Win for player1";
+    public static String showEqualsPoint(int player1Score) {
+        String total = "";
+        switch (player1Score) {
+            case ZERO_POINT:
+                total = "Love-All";
+                break;
+            case ONE_POINT:
+                total = "Fifteen-All";
+                break;
+            case TWO_POINT:
+                total = "Thirty-All";
+                break;
+            case THREE_POINT:
+                total = "Forty-All";
+                break;
+            default:
+                total = "Deuce";
+                break;
+
+        }
+        return total;
+    }
+
+    public static String showAvantagePoint(int player1Score, int player2Score) {
+        String total = " ";
+        if (player1Score >= MIN_OF_SCORE || player2Score >= MIN_OF_SCORE) {
+
+            int minusResultPoint = player1Score - player2Score;
+            if (minusResultPoint == 1) {
+                total = "Advantage player1";
+            } else if (minusResultPoint == -1) {
+                total = "Advantage player2";
+            } else if (minusResultPoint >= 2) {
+                total = "Win for player1";
             } else {
-                score = "Win for player2";
+                total = "Win for player2";
             }
+        }
+        return total;
+    }
+
+    public static String showResult(int player1Score, int player2Score) {
+        String total = " ";
+        int tempScore = 0;
+        if (player1Score == player2Score) {
+            return showEqualsPoint(player1Score);
+        } else if (player1Score >= MIN_OF_SCORE || player2Score >= MIN_OF_SCORE) {
+            return showAvantagePoint(player1Score, player2Score);
         } else {
             for (int i = 1; i < 3; i++) {
-                if (i == 1) tempScore = playScore1;
-                else {
-                    score += "-";
-                    tempScore = playScore2;
+                if (i == 1) {
+                    tempScore = player1Score;
+                } else {
+                    total += "-";
+                    tempScore = player2Score;
                 }
                 switch (tempScore) {
                     case ZERO_POINT:
-                        score += "Love";
+                        total += "Love";
                         break;
                     case ONE_POINT:
-                        score += "Fifteen";
+                        total += "Fifteen";
                         break;
                     case TWO_POINT:
-                        score += "Thirty";
+                        total += "Thirty";
                         break;
                     case THREE_POINT:
-                        score += "Forty";
+                        total += "Forty";
                         break;
                 }
+
             }
         }
-        return score;
+        return total;
+    }
+
+
     }
 }
