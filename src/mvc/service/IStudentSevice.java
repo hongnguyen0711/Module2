@@ -1,7 +1,6 @@
 package mvc.service;
-import mvc.model.Student;
 public interface IStudentSevice {
-    void dispaly();
+    void display();
     void add();
     void delete();
 

@@ -13,4 +13,29 @@ public class Student extends Person{
         this.score = score;
     }
 
+    public String getClassRoom() {
+        return classRoom;
+    }
+
+    public void setClassRoom(String classRoom) {
+        this.classRoom = classRoom;
+    }
+
+    public double getScore() {
+        return score;
+    }
+
+    public void setScore(double score) {
+        this.score = score;
+    }
+
+    @Override
+    public String toString() {
+        return "Student*---| " + "id=" + super.getId() +
+                " || name='" + super.getName()+ "\t" +
+                " || gender=" + super.isGender()+ "\t"+
+                " || classRoom='" + classRoom + "\t" +
+                " || score=" + score +
+                " |---*";
+    }
 }

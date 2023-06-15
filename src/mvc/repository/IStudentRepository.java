@@ -2,9 +2,11 @@ package mvc.repository;
 
 import mvc.model.Student;
 
+import java.util.List;
+
 public interface IStudentRepository {
 
-        Student[] display();
+        List display();
         void add(Student student);
         void delete();
 }
