@@ -1,5 +1,5 @@
 package mvc.service;
-public interface IStudentSevice {
+public interface IStudentService {
     void display();
     void add();
     void delete();

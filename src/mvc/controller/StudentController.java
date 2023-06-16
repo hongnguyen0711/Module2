@@ -1,12 +1,12 @@
 package mvc.controller;
 
 
-import mvc.service.StudentSevice;
+import mvc.service.StudentService;
 
 import java.util.Scanner;
 
 public class StudentController {
-    private static final StudentSevice studentSevice = new StudentSevice();
+    private static final StudentService studentService = new StudentService();
     public static void showMenu() {
         Scanner scanner = new Scanner(System.in);
         boolean flag = true;
@@ -16,20 +16,20 @@ public class StudentController {
                     "\n2. Add" +
                     "\n3. Delete" +
                     "\n4. Edit" +
-                    "\n5. Search" +
-                    "\n6. Exit");
+                    "\n5. Exit");
             int choose = Integer.parseInt(scanner.nextLine());
             switch (choose) {
                 case 1:
                     System.out.println("--------chức năng hiển thị----------");
-                    studentSevice.display();
+                    studentService.display();
                     break;
                 case 2:
                     System.out.println("-----------Thêm mới-----------------");
-                    studentSevice.add();
+                    studentService.add();
                     break;
                 case 3:
                     System.out.println("-------------Xoá-----------------------");
+                    studentService.delete();
                     break;
                 default:
                     flag = false;

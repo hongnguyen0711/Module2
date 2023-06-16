@@ -8,5 +8,5 @@ public interface IStudentRepository {
 
         List display();
         void add(Student student);
-        void delete();
+        void delete(int id);
 }

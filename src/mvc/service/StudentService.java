@@ -1,13 +1,15 @@
 package mvc.service;
 
+
 import mvc.model.Student;
 import mvc.repository.StudentRepository;
 
 import java.util.List;
 import java.util.Scanner;
 
-public class StudentSevice implements IStudentSevice {
-    private final StudentRepository studentRepository = new StudentRepository();
+public class StudentService implements IStudentService {
+    private static final StudentRepository studentRepository = new StudentRepository();
+
 
     @Override
     public void display() {
@@ -37,6 +39,11 @@ public class StudentSevice implements IStudentSevice {
 
     @Override
     public void delete() {
+        Scanner scanner = new Scanner(System.in);
+        System.out.println("Hãy nhập id muốn xóa: ");
+        int id = Integer.parseInt(scanner.nextLine());
+        studentRepository.delete(id);
+
+        }
 
     }
-}

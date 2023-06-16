@@ -32,9 +32,9 @@ public class Student extends Person{
     @Override
     public String toString() {
         return "Student*---| " + "id=" + super.getId() +
-                " || name='" + super.getName()+ "\t" +
+                " || name=" + super.getName()+ "\t" +
                 " || gender=" + super.isGender()+ "\t"+
-                " || classRoom='" + classRoom + "\t" +
+                " || classRoom=" + classRoom + "\t" +
                 " || score=" + score +
                 " |---*";
     }

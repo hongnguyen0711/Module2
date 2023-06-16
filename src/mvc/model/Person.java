@@ -1,10 +1,9 @@
 package mvc.model;
 
 public class Person {
-//    Mã, tên, ngày sinh, giới tính
-    private int id;
-    private String name;
-    private boolean gender;
+    public int id;
+    public String name;
+    public boolean gender;
 
     public Person() {
     }
