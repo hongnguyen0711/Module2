@@ -84,6 +84,7 @@ public class TennisGame {
         return total;
     }
 
-
+    public static String showAvantagePoint(String john, String bill, int mScore1, int mScore2) {
+        return john + mScore1 + bill + mScore2 ;
     }
 }

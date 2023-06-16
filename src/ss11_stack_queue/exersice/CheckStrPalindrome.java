@@ -11,15 +11,15 @@ public class CheckStrPalindrome {
         Stack<String> strStack = new Stack<>();
         Queue<String> strQueue = new ArrayDeque<>();
 
-        for (int i = 0; i < arrStr.length; i++) {
-            strStack.push(arrStr[i]);
-            strQueue.add(arrStr[i]);
+        for (String s : arrStr) {
+            strStack.push(s);
+            strQueue.add(s);
         }
         boolean flag = true;
-        while (!strStack.isEmpty() && flag==true){
+        while (!strStack.isEmpty() && flag == true) {
             flag = strStack.pop().equals(strQueue.remove());
         }
-        if (flag){
+        if (flag) {
             System.out.println("Chuỗi này là Palindrome!");
         } else {
             System.out.println("Chuỗi này không phải là Palindrome!");

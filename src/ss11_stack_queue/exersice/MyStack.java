@@ -10,7 +10,7 @@ public class MyStack {
         integerStack.push(3);
         System.out.println();
         Stack<Integer> newStack = new Stack<>();
-        while (!integerStack.isEmpty()){
+        while (!integerStack.isEmpty()) {
             newStack.push(integerStack.pop());
         }
         System.out.println(newStack);
