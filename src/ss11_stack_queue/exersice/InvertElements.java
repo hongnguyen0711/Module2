@@ -2,7 +2,7 @@ package ss11_stack_queue.exersice;
 
 import java.util.Stack;
 
-public class MyStack {
+public class InvertElements {
     public static void main(String[] args) {
         Stack<Integer> integerStack = new Stack<>();
         integerStack.push(1);
