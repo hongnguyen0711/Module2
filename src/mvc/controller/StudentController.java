@@ -7,7 +7,7 @@ import java.util.Scanner;
 
 public class StudentController {
     private static final StudentService studentService = new StudentService();
-    public static void showMenu() {
+    public void showMenu() {
         Scanner scanner = new Scanner(System.in);
         boolean flag = true;
         do {

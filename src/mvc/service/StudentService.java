@@ -8,8 +8,7 @@ import java.util.List;
 import java.util.Scanner;
 
 public class StudentService implements IStudentService {
-    private static final StudentRepository studentRepository = new StudentRepository();
-
+    private final StudentRepository studentRepository = new StudentRepository();
 
     @Override
     public void display() {
