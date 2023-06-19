@@ -54,8 +54,8 @@ public class ProductRepository implements IProductRepository {
 
     @Override
     public void edit(Product product) {
-        for (Product p: productList) {
-            if (p.getId()==product.getId()){
+        for (Product p : productList) {
+            if (p.getId() == product.getId()) {
                 p = product;
             }
         }
@@ -74,7 +74,7 @@ public class ProductRepository implements IProductRepository {
     @Override
     public void search(String name) {
         for (int i = 0; i < productList.size(); i++) {
-            if (productList.get(i).getName().equals(name)){
+            if (productList.get(i).getName().equals(name)) {
                 System.out.println(productList.get(i));
             }
         }

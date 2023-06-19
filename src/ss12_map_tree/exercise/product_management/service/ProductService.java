@@ -52,7 +52,7 @@ public class ProductService implements IProductService {
                 productEdit = p;
             }
         }
-        if (productEdit!= null){
+        if (productEdit != null) {
             System.out.println(productEdit);
             System.out.println("Hãy nhập vào tên sp mới:");
             String name = scanner.nextLine();
@@ -64,7 +64,7 @@ public class ProductService implements IProductService {
             productEdit.setMade(made);
             productEdit.setPrice(price);
             productRepository.edit(productEdit);
-        }else {
+        } else {
             System.out.println("Không có sp này!");
         }
     }
