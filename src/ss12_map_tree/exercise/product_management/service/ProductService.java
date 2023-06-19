@@ -35,9 +35,26 @@ public class ProductService implements IProductService {
 
     @Override
     public void remove() {
+        boolean flag = true;
         System.out.println("Hãy nhập vào id muốn xóa: ");
         int id = Integer.parseInt(scanner.nextLine());
-        productRepository.delete(id);
+        List<Product> producRemove = productRepository.display();
+        for (Product product : producRemove) {
+            if (product.getId() == id) {
+                System.out.println(product);
+                System.out.println("Bạn có muốn xóa không? Nhập 'y' để xác nhận, nhập bất kỳ để hủy bỏ!");
+                String confirm = scanner.nextLine();
+                if (confirm.equals("y")) {
+                    productRepository.delete(id);
+                    System.out.println("Đã xóa thành công!");
+                }
+                flag = false;
+                break;
+            }
+        }
+        if (flag) {
+            System.out.println("Không tìm thấy!");
+        }
     }
 
     @Override

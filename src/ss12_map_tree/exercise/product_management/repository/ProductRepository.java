@@ -10,7 +10,6 @@ import java.util.List;
 import java.util.Scanner;
 
 public class ProductRepository implements IProductRepository {
-    Scanner scanner = new Scanner(System.in);
     static List<Product> productList = new ArrayList<>();
 
     static {
@@ -31,24 +30,10 @@ public class ProductRepository implements IProductRepository {
 
     @Override
     public void delete(int id) {
-        boolean flag = false;
         for (int i = 0; i < productList.size(); i++) {
             if (id == productList.get(i).getId()) {
-                System.out.println("Bạn có muốn xóa sản phẩm: " + productList.get(i).toString() +
-                        "\nNhập 1 để xác nhận, nhập bất kì nếu muốn hủy bỏ!");
-                int confirm = Integer.parseInt(scanner.nextLine());
-                if (confirm == 1) {
-                    productList.remove(productList.get(i));
-                }
-                flag = true;
-            } else {
-                flag = false;
+                productList.remove(productList.get(i));
             }
-        }
-        if (flag) {
-
-        } else {
-            System.out.println("Không có sp này!");
         }
     }
 
