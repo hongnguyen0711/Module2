@@ -7,7 +7,6 @@ import ss12_map_tree.exercise.product_management.model.Product;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
-import java.util.Scanner;
 
 public class ProductRepository implements IProductRepository {
     static List<Product> productList = new ArrayList<>();
