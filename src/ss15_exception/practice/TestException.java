@@ -3,7 +3,7 @@ package ss15_exception.practice;
 import java.util.Scanner;
 
 
-public class Text {
+public class TestException {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
         boolean flag = true;
