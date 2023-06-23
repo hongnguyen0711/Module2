@@ -22,6 +22,8 @@ public class TestException {
                 System.out.println("Tam giác không hợp lệ!");
             } catch (NumberFormatException e) {
                 System.out.println("không hợp lệ!");
+            } catch (Exception e){
+                System.out.println("không hợp lệ!");
             }
         } while (flag);
     }
