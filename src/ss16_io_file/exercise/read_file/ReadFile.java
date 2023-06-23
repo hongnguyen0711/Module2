@@ -26,6 +26,6 @@ public class ReadFile {
     }
 
     public static void main(String[] args) {
-        readFile("src/ss16_io_file/exercise/read_file/readfile");
+        readFile("src/ss16_io_file/exercise/read_file/readfile.csv");
     }
 }
