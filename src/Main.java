@@ -1,12 +1,16 @@
 import com.sun.xml.internal.ws.addressing.WsaActionUtil;
 
 public class Main {
-    public static void main(String[] args) {
-        int[] arr = {1, 2, 3, 3};
-        System.out.println(solution(arr));
-
-
-    }
+//    public static void main(String[] args) {
+//        int[] arr = {1, 2, 3, 3};
+//        System.out.println(solution(arr));
+//
+//
+//    }
+    static {
+      int[] arr = {1, 2, 3, 3};
+    System.out.println( solution(arr));
+}
 
 
     static boolean solution(int[] a) {
