@@ -19,25 +19,25 @@ public class ProductController {
                     "\n5. Sort" +
                     "\n6. Search" +
                     "\n7. Exit");
-            int choose = Integer.parseInt(scanner.nextLine());
+            String choose = scanner.nextLine();
             switch (choose) {
-                case 1:
+                case "1":
                     System.out.println("--------Chức năng hiển thị----------");
                     productService.display();
                     break;
-                case 2:
+                case "2":
                     System.out.println("-----------Thêm mới-----------------");
                     productService.add();
                     break;
-                case 3:
+                case "3":
                     System.out.println("-------------Xoá-----------------------");
                     productService.remove();
                     break;
-                case 4:
+                case "4":
                     System.out.println("-------------Sửa-----------------------");
                     productService.edit();
                     break;
-                case 5:
+                case "5":
                     System.out.println("------------- sắp xếp-----------------------\n" +
                             "1.Sắp xếp tăng dần theo giá sp.\n" +
                             "2.Sắp xếp giảm dần theo giá sp.");
@@ -55,11 +55,11 @@ public class ProductController {
                             System.out.println("Không có chức năng này!");
                     }
                     break;
-                case 6:
+                case "6":
                     System.out.println("-------------Tìm kiếm-----------------------");
                     productService.search();
                     break;
-                case 7:
+                case "7":
                     flag = false;
                     break;
                 default:

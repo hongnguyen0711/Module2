@@ -13,6 +13,7 @@ public class Main {
 }
 
 
+
     static boolean solution(int[] a) {
         boolean flag = false;
         int sum1 = 0;

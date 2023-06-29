@@ -58,4 +58,8 @@ public class Product {
                 '}';
 
     }
+
+    public String toStringProduct() {
+        return id + "," + name + "," + made + "," + price;
+    }
 }
