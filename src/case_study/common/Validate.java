@@ -1,9 +1,10 @@
 package case_study.common;
 
-import java.sql.Time;
+
 import java.time.LocalDate;
-import java.time.LocalDateTime;
+import java.time.Period;
 import java.util.Scanner;
+import java.util.regex.Pattern;
 
 public class Validate {
     static Scanner scanner = new Scanner(System.in);
@@ -18,7 +19,7 @@ public class Validate {
                 id = scanner.nextLine();
                 check = id.matches(REGEX_ID);
             } catch (Exception e) {
-                System.out.println("Hãy nhập lại!");
+                System.out.print("Hãy nhập lại!");
             }
         } while (!check);
         return id;
@@ -34,7 +35,7 @@ public class Validate {
                 name = scanner.nextLine();
                 check = name.matches(REGEX_NAME);
             } catch (Exception e) {
-                System.out.println("Hãy nhập lại!");
+                System.out.print("Hãy nhập lại!");
             }
         } while (!check);
         return name;
@@ -50,7 +51,7 @@ public class Validate {
                 gender = scanner.nextLine();
                 check = gender.matches(REGEX_GENDER);
             } catch (Exception e) {
-                System.out.println("Hãy nhập lại!");
+                System.out.print("Hãy nhập lại!");
             }
         } while (!check);
         return gender;
@@ -66,7 +67,7 @@ public class Validate {
                 numCard = scanner.nextLine();
                 check = numCard.matches(REGEX_GENDER);
             } catch (Exception e) {
-                System.out.println("Hãy nhập lại!");
+                System.out.print("Hãy nhập lại!");
             }
         } while (!check);
         return numCard;
@@ -82,7 +83,7 @@ public class Validate {
                 phoneNumber = scanner.nextLine();
                 check = phoneNumber.matches(REGEX_GENDER);
             } catch (Exception e) {
-                System.out.println("Hãy nhập lại!");
+                System.out.print("Hãy nhập lại!");
             }
         } while (!check);
         return phoneNumber;
@@ -102,7 +103,7 @@ public class Validate {
                     flag = false;
                 }
             } catch (Exception e) {
-                System.out.println("Hãy nhập lại!");
+                System.out.print("Hãy nhập lại!");
                 flag = false;
             }
         } while (!flag);
@@ -131,7 +132,7 @@ public class Validate {
         String level = null;
         do {
             try {
-                System.out.println("Nhập trình độ(Trung cấp, Cao đẳng, Đại học, Sau đại học): ");
+                System.out.print("Nhập trình độ(Trung cấp, Cao đẳng, Đại học, Sau đại học): ");
                 level = scanner.nextLine();
                 for (String s : arrLevel) {
                     if (s.equals(level)) {
@@ -154,7 +155,7 @@ public class Validate {
         String position = null;
         do {
             try {
-                System.out.println("Nhập chức vụ(Lễ tân, Phục vụ, Chuyên viên, Giám sát, Quản lý, Giám đốc): ");
+                System.out.print("Nhập chức vụ(Lễ tân, Phục vụ, Chuyên viên, Giám sát, Quản lý, Giám đốc): ");
                 position = scanner.nextLine();
                 for (String s : arrPosition) {
                     if (s.equals(position)) {
@@ -170,19 +171,35 @@ public class Validate {
         } while (!flag);
         return position;
     }
-//    public static String validateDate() {
-//        final String REGEX_GENDER = "^0[0-9]{9}$";
-//        boolean check = true;
-//        String date = LocalDate.now();
-//        do {
-//            try {
-//                System.out.print("Nhập số điện thoại(bắt đầu là 0, gồm 10 số): ");
-//                date = scanner.nextLine();
-//                check = date.matches(REGEX_GENDER);
-//            } catch (Exception e) {
-//                System.out.println("Hãy nhập lại!");
-//            }
-//        } while (!check);
-//        return date;
-//    }
+    public static String validateDate() {
+        final String REGEX_DATE= "^(19[0-9]{2}|20[0-2]{1}[0-9]{1})-(0[1-9]|1[0-2])-(0[1-9]|[12][0-9]|3[01])$";
+        boolean flag = true;
+        String date = null;
+        do {
+            try {
+                System.out.print("Nhập ngày tháng năm sinh(YYYY-MM-DD): ");
+                date = scanner.nextLine();
+                if (Pattern.matches(REGEX_DATE, date)) {
+                    LocalDate currentDate = LocalDate.now();
+                    LocalDate birthDate = LocalDate.parse(date);
+
+                    Period period = Period.between(birthDate, currentDate);
+                    int age = period.getYears();
+                    if (age >= 18) {
+                        System.out.println("Đủ 18 tuổi");
+                        flag = true;
+                    } else {
+                        System.out.println("Chưa đủ 18 tuổi!");
+                        flag = false;
+                    }
+                } else {
+                    System.out.println("Ngày tháng năm sinh không hợp lệ.");
+                    flag = false;
+                }
+            } catch (Exception e) {
+                System.out.println("Hãy nhập lại!");
+            }
+        } while (!flag);
+        return date;
+    }
 }

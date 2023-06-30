@@ -5,7 +5,6 @@ import case_study.repository.interface_repository.IEmployeeRepository;
 import case_study.utils.ReadAndWrite;
 
 
-
 import java.util.ArrayList;
 import java.util.List;
 
@@ -32,26 +31,18 @@ public class EmployeeRepository implements IEmployeeRepository {
     }
 
     @Override
-    public Employee getElement(int index) {
-        List<Employee> employeeList = display();
-        for (int i = 0; i < employeeList.size(); i++) {
-
-        }
-        return null;
-    }
-
-    @Override
-    public void edit(int index,Employee employee) {
+    public void edit(int index, Employee employee) {
         List<String> stringList = ReadAndWrite.readFile(EMPLOYEE_PATH_FILE);
-        stringList.set(index,employee.getInfo());
-        ReadAndWrite.writeListFile(EMPLOYEE_PATH_FILE, stringList,false);
+        stringList.set(index, employee.getInfo());
+        ReadAndWrite.writeListFile(EMPLOYEE_PATH_FILE, stringList, false);
     }
+
     @Override
-    public int checkId(String id){
+    public int checkId(String id) {
         List<Employee> employeeList = display();
         int index = -1;
         for (int i = 0; i < employeeList.size(); i++) {
-            if (employeeList.get(i).getId().equals(id)){
+            if (employeeList.get(i).getId().equals(id)) {
                 index = i;
             }
         }

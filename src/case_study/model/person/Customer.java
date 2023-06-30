@@ -1,6 +1,6 @@
 package case_study.model.person;
 
-public class Customer extends Person{
+public class Customer extends Person {
     private String customerType;
     private String address;
 
@@ -34,11 +34,24 @@ public class Customer extends Person{
         this.address = address;
     }
 
+    public String getInfo() {
+        return getId() + "," + getName() + "," + getDate() + "," + isGender() + "," + getCardNumber() + "," +
+                getPhoneNumber() + "," + getEmail() + "," + customerType + "," + address;
+    }
+
+
     @Override
     public String toString() {
-        return "Customer{" +
-                "customerType='" + customerType + '\'' +
+        return "Employee{" +
+                "Id='" + getId() + '\'' +
+                ", name='" + getName() + '\'' +
+                ", date='" + getDate() + '\'' +
+                ", gender=" + isGender() +
+                ", cardNumber=" + getCardNumber() +
+                ", phoneNumber=" + getPhoneNumber() +
+                ", email='" + getEmail() + '\'' +
+                ", customerType='" + customerType + '\'' +
                 ", address='" + address + '\'' +
-                "} " + super.toString();
+                "} ";
     }
 }

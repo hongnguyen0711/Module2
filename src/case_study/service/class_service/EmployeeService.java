@@ -15,34 +15,25 @@ public class EmployeeService implements IEmployeeService {
 
     @Override
     public void edit() {
-        System.out.println("Nhập mã nhân viên muốn sửa: ");
-        String id = scanner.nextLine();
+        System.out.println("Nhập mã nhân viên muốn sửa, ");
+        String id = Validate.validateId();
         int index = iEmployeeRepository.checkId(id);
-        if (index == -1){
+        if (index == -1) {
             System.out.println("id Không tồn tại!");
-        }else {
-            System.out.print("Nhập tên:");
-            String name = scanner.nextLine();
-            System.out.print("Nhập ngày sinh:");
-            String date = scanner.nextLine();
-            System.out.print("Nhập giới tính:");
-            boolean gender = Boolean.parseBoolean(scanner.nextLine());
-            System.out.print("Nhập số CMND:");
-            String numCard = scanner.nextLine();
-            System.out.print("Nhập SĐT: ");
-            String phoneNum = scanner.nextLine();
-            System.out.print("Nhập Email:");
-            String email = scanner.nextLine();
-            System.out.print("Nhập trình độ: ");
-            String level = scanner.nextLine();
-            System.out.print("Nhập vị trí: ");
-            String position = scanner.nextLine();
-            System.out.print("Nhập lương: ");
-            String salary = scanner.nextLine();
-            Employee editEmployee = new Employee(id, name, date, gender, numCard, phoneNum, email, level, position, salary);
-            iEmployeeRepository.edit(index,editEmployee);
-        }
+        } else {
+            String name = Validate.validateName();
+            String date = Validate.validateDate();
+            boolean gender = Boolean.parseBoolean(Validate.validateGender());
+            String numCard = Validate.validateNumCard();
+            String phoneNum = Validate.validatePhoneNumber();
+            String email = Validate.validateEmail();
+            String level = Validate.checkLevel();
+            String position = Validate.checkPosition();
+            String salary = Validate.checkSalary();
 
+            Employee editEmployee = new Employee(id, name, date, gender, numCard, phoneNum, email, level, position, salary);
+            iEmployeeRepository.edit(index, editEmployee);
+        }
 
     }
 
@@ -52,15 +43,21 @@ public class EmployeeService implements IEmployeeService {
         for (Employee e : employeeList) {
             System.out.println(e);
         }
-
     }
 
     @Override
     public void addNew() {
-        String id = Validate.validateId();
+        String id;
+        int index;
+        do {
+            id = Validate.validateId();
+            index = iEmployeeRepository.checkId(id);
+            if (index != -1) {
+                System.out.println("Id đã tồn tại!");
+            }
+        } while (index != -1);
         String name = Validate.validateName();
-        System.out.print("Nhập ngày sinh:");
-        String date = scanner.nextLine();
+        String date = Validate.validateDate();
         boolean gender = Boolean.parseBoolean(Validate.validateGender());
         String numCard = Validate.validateNumCard();
         String phoneNum = Validate.validatePhoneNumber();
