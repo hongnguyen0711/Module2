@@ -1,24 +1,30 @@
 package case_study.controller;
 
+import case_study.service.class_service.CustomerService;
 import case_study.service.class_service.EmployeeService;
+import case_study.service.class_service.FacilityService;
+import case_study.service.interface_service.ICustomerService;
 import case_study.service.interface_service.IEmployeeService;
+import case_study.service.interface_service.IFacilityService;
 
 import java.util.Scanner;
 
 public class FuramaController {
     IEmployeeService iEmployeeService = new EmployeeService();
+    ICustomerService iCustomerService = new CustomerService();
+    IFacilityService iFacilityService = new FacilityService();
     Scanner scanner = new Scanner(System.in);
 
     public void displayMainMenu() {
         boolean flag = true;
         do {
-            System.out.println("*********FuramaResort Management System**********\n" +
-                    "1. Employee Management\n" +
-                    "2. Customer Management\n" +
-                    "3. Facility Management\n" +
-                    "4. Booking Management\n" +
-                    "5. Promotion Management\n" +
-                    "6. Exit\n" +
+            System.out.println("*********- Hệ Thống Quản Lý FuramaResort -**********\n" +
+                    "1. Quản lý nhân viên\n" +
+                    "2. Quản lý khách hàng\n" +
+                    "3. Quản lý cơ sở\n" +
+                    "4. Quản lý đặt phòng\n" +
+                    "5. Chương trình khuyến mãi\n" +
+                    "6. Thoát\n" +
                     "Nhập chức năng để tiếp tục:");
             String choise = scanner.nextLine();
             switch (choise) {
@@ -50,11 +56,11 @@ public class FuramaController {
         boolean flag = true;
         do {
             try {
-                System.out.println("***Employee Management***\n" +
-                        "1. Display list employees\n" +
-                        "2. Add new employee\n" +
-                        "3. Edit employee\n" +
-                        "4. Return main menu");
+                System.out.println("***- Quản Lý Nhân viên -***\n" +
+                        "1. Hiển thị danh sách nhân viên\n" +
+                        "2. Thêm mới nhân viên\n" +
+                        "3. Chỉnh sửa thông tin nhân viên\n" +
+                        "4. Trở về menu chính");
                 String choise1 = scanner.nextLine();
                 switch (choise1) {
                     case "1":
@@ -82,18 +88,21 @@ public class FuramaController {
         boolean flag = true;
         try {
             do {
-                System.out.println("***Customer Management***\n" +
-                        "1. Display list customers\n" +
-                        "1. Display list customers\n" +
-                        "3. Edit customer\n" +
-                        "4. Return main menu");
+                System.out.println("***- Quản Lý Khách Hàng -***\n" +
+                        "1. Hiển thị danh sách khách hàng\n" +
+                        "1. Thêm mới khách hàng\n" +
+                        "3. Chỉnh sửa thông tin khách hàng\n" +
+                        "4. Trở về menu chính");
                 String choise2 = scanner.nextLine();
                 switch (choise2) {
                     case "1":
+                        iCustomerService.display();
                         break;
                     case "2":
+                        iCustomerService.addNew();
                         break;
                     case "3":
+                        iCustomerService.edit();
                         break;
                     case "4":
                         flag = false;
@@ -113,7 +122,7 @@ public class FuramaController {
         boolean flag = true;
         try {
             do {
-                System.out.println("***Booking Managerment***\n" +
+                System.out.println("***- Booking Management -***\n" +
                         "1. Add new booking\n" +
                         "2. Display list booking\n" +
                         "3. Create new contracts\n" +
@@ -150,16 +159,18 @@ public class FuramaController {
         boolean flag = true;
         try {
             do {
-                System.out.println("***Facility Management***\n" +
-                        "1 Display list facility\n" +
-                        "2 Add new facility\n" +
-                        "3 Display list facility maintenance\n" +
-                        "4 Return main menu");
+                System.out.println("***- Quản Lý Cơ Sở -***\n" +
+                        "1 Hiển thị danh sách Facility\n" +
+                        "2 Thêm mới Facility\n" +
+                        "3 Hiển thị danh sách Facility maintenance\n" +
+                        "4 Trở về menu chính");
                 String choise3 = scanner.nextLine();
                 switch (choise3) {
                     case "1":
+                        iFacilityService.display();
                         break;
                     case "2":
+                        iFacilityService.addNew();
                         break;
                     case "3":
                         break;

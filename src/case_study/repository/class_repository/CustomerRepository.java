@@ -18,6 +18,7 @@ public class CustomerRepository implements ICustomerRepository {
         for (String s : list) {
             info = s.split(",");
             Customer customer = new Customer(info[0], info[1], info[2], Boolean.parseBoolean(info[3]), info[4], info[5], info[6], info[7], info[8]);
+            customerList.add(customer);
         }
         return customerList;
     }
@@ -36,6 +37,13 @@ public class CustomerRepository implements ICustomerRepository {
 
     @Override
     public int checkId(String id) {
-        return 0;
+        int index = -1;
+        List<Customer> customerList = display();
+        for (int i = 0; i < customerList.size(); i++) {
+            if (customerList.get(i).getId().equals(id)) {
+                index = i;
+            }
+        }
+        return index;
     }
 }

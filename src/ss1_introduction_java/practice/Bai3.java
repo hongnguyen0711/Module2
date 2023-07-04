@@ -12,7 +12,6 @@ public class Bai3 {
         String[] name1 = {"ten", "eleven", "twelve", "thirteen", "fourteen", "fifteen", "sixteen", "seventeen", "eighteen", "nineteen"};
         String[] name2 = {"zero", "ten", "twenty", "thirty", "forty", "fifty", "sixty", "seventy", "eighty", "ninety"};
 
-
         if (input >= 0 && input <= 10) {
             System.out.printf(name[input]);
         } else if (input < 20) {
